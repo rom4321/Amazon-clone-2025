@@ -23,7 +23,7 @@ import { ClipLoader } from "react-spinners";
 import { useNavigate } from "react-router-dom";
 
 // Redux-like action types
-import { Type } from "../../Utility/action.type";
+import { Type } from "../../utility/action.type";
 
 // Stripe Hooks for payment + Card UI input
 import { useStripe, useElements, CardElement } from "@stripe/react-stripe-js";
@@ -32,7 +32,7 @@ import { useStripe, useElements, CardElement } from "@stripe/react-stripe-js";
 import { axiosInstance } from "../../API/axios";
 
 // Firebase DB (Firestore)
-import { db } from "../../Utility/Firebase";
+import { db } from "../../utility/Firebase";
 
 function Payment() {
   // Get user & basket from global context

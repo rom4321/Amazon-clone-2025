@@ -6,8 +6,8 @@ import { BsSearch } from "react-icons/bs";
 import amazon_letter_logo from "../../assets/amazon_letter_white_logo.png";
 import { BiCart } from "react-icons/bi";
 import { DataContext } from "../DataProvider/DataProvider";
-import { auth } from "../../Utility/Firebase";
-import { Type } from "../../Utility/action.type";
+import { auth } from "../../utility/Firebase";
+import { Type } from "../../utility/action.type";
 import LowerHeader from './LowerHeader'
 const Header = () => {
 
