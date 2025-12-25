@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { Link, useParams } from "react-router-dom";
 import axios from "axios";
-import { FakeStoreAPI_BaseURL } from "../../API/EndPoints";
+import { FakeStoreAPI_BaseURL } from "../../API/endPoints";
 import styles from "./results.module.css";
 import ProductDetail from "../ProductDetail/ProductDetail";
 import Layout from "../../components/Layout/Layout";

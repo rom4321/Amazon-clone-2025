@@ -1,10 +1,10 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 
-import classes from "./Product.module.css";
+import classes from "./product.module.css";
 import Loader from "../../Pages/Loader/Loader";
 import ProductCard from "./ProductCard";
-import { FakeStoreAPI_BaseURL } from "../../API/EndPoints";
+import { FakeStoreAPI_BaseURL } from "../../API/endPoints";
 
 /**
  * Product Component
