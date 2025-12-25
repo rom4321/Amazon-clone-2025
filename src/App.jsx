@@ -1,8 +1,8 @@
 import React, { useContext, useEffect } from "react";
 import "./App.css";
 import AppRouter from "../Router";
-import { Type } from "./Utility/action.type";
-import { auth } from "./utility/Firebase";
+import { Type } from "./Utility/action.type.js";
+import { auth } from "./Utility/Firebase.js";
 import { DataContext } from "./components/DataProvider/DataProvider";
 
 function App() {

@@ -32,7 +32,7 @@ import { useStripe, useElements, CardElement } from "@stripe/react-stripe-js";
 import { axiosInstance } from "../../API/axios";
 
 // Firebase DB (Firestore)
-import { db } from "../../utility/Firebase";
+import { db } from "../../Utility/Firebase";
 
 function Payment() {
   // Get user & basket from global context

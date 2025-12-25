@@ -1,7 +1,7 @@
 import React, { useContext, useState, useEffect } from "react";
 import Layout from '../../components/Layout/Layout';
 import classes from "./orders.module.css";
-import { db } from "../../utility/Firebase";
+import { db } from "../../Utility/Firebase";
 import { DataContext } from "../../components/DataProvider/DataProvider";
 import ProductCard from "../../components/Product/ProductCard";
 import { BiLoader } from "react-icons/bi";

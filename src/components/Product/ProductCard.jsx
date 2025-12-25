@@ -3,7 +3,7 @@ import Rating from "@mui/material/Rating";
 import CurrencyFormat from "../CurrencyFormat/CurrencyFormat";
 import styles from "./Product.module.css";
 import { Link } from "react-router-dom";
-import { Type } from "../../Utility/action.type";
+import { Type } from "../../Utility/action.type.js";
 import { DataContext } from "../DataProvider/DataProvider.jsx";
 import { BsFillCartXFill } from "react-icons/bs";
 
