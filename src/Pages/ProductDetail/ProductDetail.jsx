@@ -8,7 +8,7 @@ import { useParams } from "react-router-dom";
 import axios from "axios";
 
 // Base URL for Fake Store API
-import { FakeStoreAPI_BaseURL } from "../../API/EndPoints";
+import { FakeStoreAPI_BaseURL } from "../../API/endPoints";
 
 // Layout wrapper component (header, footer, etc.)
 import Layout from "../../components/Layout/Layout";
