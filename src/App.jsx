@@ -1,24 +1,37 @@
-// Import useState hook from React
-import { useState } from "react";
-
-// Import global CSS styles for the App component
+import React, { useContext, useEffect } from "react";
 import "./App.css";
-
-// Import Routing component (handles all app routes/pages)
-import Routing from "../Router";
+import AppRouter from "../Router";
+import { Type } from "./Utility/action.type";
+import { auth } from "./utility/Firebase";
+import { DataContext } from "./components/DataProvider/DataProvider";
 
 function App() {
-  // State declaration (currently unused, safe to remove if not needed)
-  const [count, setCount] = useState(0);
+  const [{ user }, dispatch] = useContext(DataContext);
+  useEffect(() => {
+    auth.onAuthStateChanged((authUser) => {
+      if (authUser) {
+        //check if there is authenticated user during app mount and set the state of user with the value of signed in user so that it will keep the data and signout option will be availed
+        // console.log(`APP onAuthStateChanged > if case executed 👇 ${JSON.stringify(authUser)}`);
+        dispatch({
+          type: Type.SET_USER,
+          user: authUser,
+        });
+      } else {
+        //check if there is no authenticated user during app mount and set the state of user as null so that sign in can be made
+        // console.log(`APP onAuthStateChanged > else case executed 👉  ${JSON.stringify(authUser)}`);
+        dispatch({
+          type: Type.SET_USER,
+          user: null,
+        });
+      }
+    });
+  }, []);
 
-  // Main App component render
   return (
     <>
-      {/* Routing component controls navigation between pages */}
-      <Routing />
+      <AppRouter />
     </>
   );
 }
 
-// Export App component so it can be used in main.jsx / index.js
 export default App;
