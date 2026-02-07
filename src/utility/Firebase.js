@@ -1,28 +1,30 @@
-// Import the functions you need from the SDKs you need
+// Firebase.js
+
 import { initializeApp } from "firebase/app";
-// TODO: Add SDKs for Firebase products that you want to use
-// https://firebase.google.com/docs/web/setup#available-libraries
-
-import firebase from "firebase/compat/app";
 import { getAuth } from "firebase/auth";
-import "firebase/compat/firestore";
-import "firebase/compat/auth";
+import { getFirestore } from "firebase/firestore";
 
-// Your web app's Firebase configuration
+const apiKey = import.meta.env.VITE_FIREBASE_API_KEY || "";
+
 const firebaseConfig = {
-  apiKey: import.meta.env.VITE_FIREBASE_API_KEY,
+  apiKey,
   authDomain: "clone-2025-42090.firebaseapp.com",
   projectId: "clone-2025-42090",
+  // Confirm the storage bucket string in Firebase console (often *.appspot.com)
   storageBucket: "clone-2025-42090.firebasestorage.app",
   messagingSenderId: "1088052955106",
-  appId: "1:1088052955106:web:12ef9cac419e480ec41bbb"
+  appId: "1:1088052955106:web:12ef9cac419e480ec41bbb",
 };
 
-// Initialize Firebase
-const app = firebase.initializeApp(firebaseConfig);
+if (!apiKey) {
+  console.error(
+    "Missing Firebase API key: set VITE_FIREBASE_API_KEY in a .env file at project root and restart the dev server."
+  );
+}
 
-// Get the authentication service for signing in and out of your app
+const app = initializeApp(firebaseConfig);
+
 export const auth = getAuth(app);
+export const db = getFirestore(app);
 
-// Get the Firestore database for storing and retrieving data
-export const db = app.firestore();
+export default app;
